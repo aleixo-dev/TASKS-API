@@ -1,13 +1,7 @@
-import { fastify } from 'fastify'
+import { app } from './app.js'
 
-const server = fastify()
-
-server.get('/', () => {
-    return 'a'
-})
-
-server.listen({
-    port: 3333
+app.listen({
+    port: process.env.PORT ?? 3333
 }).then(() => {
     console.log('🔥 Server Running..')
 })

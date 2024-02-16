@@ -15,5 +15,8 @@ app.setErrorHandler((error, _, response) => {
             .send({ message: 'Invalid variables', issues: error.format() })
     }
 
-    return response.status(500).send({ message: 'Internal server error' })
+    return response.status(500).send({
+        message: 'Internal server error',
+        error: error
+    })
 })
